@@ -30,7 +30,7 @@ const people = [
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
 	let filteredArr= inventors.filter((inventor)=>{
-		if(inventor.year>=1500 && inventor.year<1600)
+		if(inventor.year>=1400 && inventor.year<1500)
 		{
 			return inventor
 		}
@@ -70,8 +70,8 @@ export function reduce() {
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
 	let yearsSort= inventors.sort((a,b)=>{
-		let aYears=a.passed-a.year
-		let bYears=b.passed-b.year
+		let aYears=a.passed-a.year+1
+		let bYears=b.passed-b.year+1
 		return aYears-bYears
 	})
 	return yearsSort
