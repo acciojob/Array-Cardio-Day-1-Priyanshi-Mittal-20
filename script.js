@@ -30,7 +30,7 @@ const people = [
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
 	let filteredArr= inventors.filter((inventor)=>{
-		if(inventor[year]>=1500 && inventor[year]<1600)
+		if(inventor.year>=1500 && inventor.year<1600)
 		{
 			return inventor
 		}
@@ -80,8 +80,10 @@ export function sortbylived() {
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
-	let lastNameSort= inventors.sort((a,b)=>{
-		return a[last].localeCompare(b[last])
+	let lastNameSort= people.sort((a,b)=>{
+		let lastNameA=a.split(",")[1].trim()
+		let lastNameB=b.split(",")[1].trim()
+		return lastNameA.localeCompare(lastNameB)
 	})
 	return lastNameSort
 }
