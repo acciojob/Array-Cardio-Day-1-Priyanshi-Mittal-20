@@ -43,7 +43,7 @@ export function myfilter() {
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
 	let nameArr=inventors.map((inventor)=>{
-		return `${inventor[first]} ${inventor[last]}`
+		return `${inventor.first} ${inventor.last}`
 	})
 	return nameArr
 }
@@ -52,7 +52,7 @@ export function map() {
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest and return the sorted array
 export function sort() {
-	let sortedArr= inventors.sort((a,b)=>a[year]-b[year])
+	let sortedArr= inventors.sort((a,b)=>a.year-b.year)
 	return sortedArr
 }
 
@@ -62,7 +62,7 @@ export function sort() {
 // Return the total number of years all the inventors lived
 export function reduce() {
 	let totalYears= inventors.reduce((sum,inventor)=>{
-		sum+=inventor[passed]-inventor[year]
+		sum+=inventor.passed-inventor.year
 	},0)
 	return totalYears
 }
@@ -70,8 +70,8 @@ export function reduce() {
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
 	let yearsSort= inventors.sort((a,b)=>{
-		let aYears=a[passed]-a[year]
-		let bYears=b[passed]-b[year]
+		let aYears=a.passed-a.year
+		let bYears=b.passed-b.year
 		return aYears-bYears
 	})
 	return yearsSort
